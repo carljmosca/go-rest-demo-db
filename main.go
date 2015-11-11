@@ -4,6 +4,7 @@ package main
 
 import (
   "strconv"
+  "os"
   "database/sql"
   "github.com/gin-gonic/gin"
   _ "github.com/go-sql-driver/mysql"
@@ -31,7 +32,10 @@ func main() {
 var dbmap = initDb()
 
 func initDb() *gorp.DbMap {
-  db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3307)/godemo")
+  db, err := sql.Open("mysql", "root:" +
+    os.Getenv("MYSQL_ENV_MYSQL_ROOT_PASSWORD") +
+    "@tcp(" + os.Getenv("MYSQL_PORT_3306_TCP_ADDR") + ":" +
+    os.Getenv("MYSQL_PORT_3306_TCP_PORT") + ")/godemo")
   checkErr(err, "sql.Open failed")
   dbmap := &gorp.DbMap{Db: db, Dialect:           gorp.MySQLDialect{"InnoDB", "UTF8"}}
   dbmap.AddTableWithName(User{}, "User").SetKeys(true, "Id")
