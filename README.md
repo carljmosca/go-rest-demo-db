@@ -4,8 +4,8 @@ The instructions assume a configured go development environment.  If needed see 
 
 ######database connection explanation
 The database connection expected 3 values to be available as environment variables.  
-From the code excerpt below, we see the three values (MYSQL_ENV_MYSQL_ROOT_PASSWORD,
-  MYSQL_PORT_3306_TCP_ADDR, and MYSQL_PORT_3306_TCP_PORT)
+From the code excerpt below, we see the three values: (MYSQL_ENV_MYSQL_ROOT_PASSWORD,
+  MYSQL_PORT_3306_TCP_ADDR, and MYSQL_PORT_3306_TCP_PORT)  
 ...  
 db, err := sql.Open("mysql", "root:" +
   os.Getenv("MYSQL_ENV_MYSQL_ROOT_PASSWORD") +
