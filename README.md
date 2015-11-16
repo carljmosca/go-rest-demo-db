@@ -48,17 +48,17 @@ curl -H "Content-Type: application/json" http://localhost:3000/api/v1/users
 ```
 #####Docker instructions
 ######build
-change to the db directory  
+change to the db directory and then build the database image and run a new container from the image   
 ```
 ./build.sh  
 ./run.sh  
 ```
-change back to top level directory  
+change back to top level directory and again build the application image and run a new container from the image  
 ```
 ./build.sh  
 ./run.sh  
 ```
-if you don't have it, get the ip address of your docker machine  (depending on your environment)
+if you don't happen to have it, get the ip address of your docker machine (depending on your environment)  
 ```
 docker-machine ip default  
 ```
