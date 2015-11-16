@@ -1,5 +1,6 @@
 # go-rest-demo-db
-go language REST demo with MySQL db
+go language REST demo with MySQL db  
+The instructions assume a configured go development environment.  If needed see the go install docs https://golang.org/doc/install
 
 #####build
 go build main.go
@@ -23,3 +24,11 @@ http://localhost:3000/api/v1/users
 curl -H "Content-Type: application/json" -X POST -d '{"firstname":"John","lastname":"Smith"}' http://localhost:3000/api/v1/users {"id":3,"firstname":"John","lastname":"Smith"}
 ######test again from browser or GET with curl
 curl -H "Content-Type: application/json" http://localhost:3000/api/v1/users
+
+#####Docker instructions
+######build
+change to the db directory  
+./build.sh
+./run.sh
+change back to top level directory
+./run.sh
