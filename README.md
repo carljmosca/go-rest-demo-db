@@ -40,7 +40,7 @@ export MYSQL_PORT_3306_TCP_PORT=3306
 http://localhost:3000/api/v1/users
 ######populate with some data
 ```
-curl -H "Content-Type: application/json" -X POST -d '{"firstname":"John","lastname":"Smith"}' http://localhost:3000/api/v1/users {"id":3,"firstname":"John","lastname":"Smith"}
+curl -H "Content-Type: application/json" -X POST -d '{"firstname":"John","lastname":"Smith"}' http://localhost:3000/api/v1/users  
 ```
 ######test again from browser or GET with curl
 ```
